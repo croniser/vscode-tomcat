@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"dependsOn": [
+				"MVN: install - no tests",
+				"MVN: deploy - tomcat"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Build & Test",
+			"dependsOn": [
+				"MVN: clean",
+				"MVN: install - with tests",
+				"MVN: deploy - tomcat"
+			],
+			"group": {
+				"kind": "build"
+			}
+		},
+		{
+			"label": "MVN: clean",
+			"type": "shell",
+			"command": "mvn clean"
+		},
+		{
+			"label": "MVN: install - no tests",
+			"type": "shell",
+			"command": "mvn install -Dmaven.test.skip",
+			"problemMatcher": []
+		},
+		{
+			"label": "MVN: install - with tests",
+			"type": "shell",
+			"command": "mvn install -Dmaven.test.skip"
+		},
+		{
+			"label": "MVN: deploy - tomcat",
+			"type": "shell",
+			"command": "mvn tomcat7:deploy"
+		}
+	]
+}
