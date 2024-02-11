@@ -1,7 +1,7 @@
 # Maven template for building Tomcat server on VSCode
 Runs a tomcat server within VSCode.  Maven build handles dependencies, compilation and deployment.
 * Test on Ubuntu 22 with Java 17
-## Install Java 11
+## Install Java
 * Add JVM to $PATH
 * Add $JAVA_HOME environment variable
 ## Install Maven
