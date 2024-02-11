@@ -1,17 +1,20 @@
-# Install Java 17
+# Maven template for building Tomcat server on VSCode
+Runs a tomcat server within VSCode.  Maven build handles dependencies, compilation and deployment.
+* Test on Ubuntu 22 with Java 17
+## Install Java 11
 * Add JVM to $PATH
 * Add $JAVA_HOME environment variable
-# Install Maven
+## Install Maven
 * Add maven bin to $PATH
-# Install Community Server Connector Extension for VS Code  v0.25.7
-* newer versions caused issues
-# Install Tomcat
+## Install Community Server Connector Extension for VS Code  v0.25.7
+* newer versions caused issues as of 02/24
+## Install Tomcat
 * Right click Community Server Connector
     1. Create Server
     2. Download Server
     3. Download Apache Tomcat
     4. Agree to license
-# Configure Tomcat
+## Configure Tomcat
 * Right click apache-tomcat
     1. Edit server
     2. Note server.home.dir path
@@ -31,17 +34,17 @@
     <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow=".*" />
 </Context>
 ```
-# Build project
+## Build project
 * Terminal > Run Task > MVN: install - no test
 * Confirm .war file created at target/vscode-tomcat-1.0-SNAPSHOT.war
-# Deploy project
+## Deploy project
 * Right click .war file
 * Run on server
 * Select tomcat
 * No extra options
-# Review project
-    - Navigation to http://localhost:8080
-    - Click Manager App button on the right
-    - Credentials: admin:admin
-# Run full build
+## Review project
+* Navigation to http://localhost:8080
+* Click Manager App button on the right
+* Credentials: admin:admin
+## Run full build
 * Terminal > Run Build Task
